@@ -95,6 +95,12 @@ open class SkyFloatingLabelTextField: UITextField {
         }
     }
     
+    @IBInspectable open var useErrorColorOnTitle:Bool = true {
+        didSet {
+            self.updateColors()
+        }
+    }
+    
     /// A UIColor value that determines the text color of the title label when editing
     @IBInspectable open var selectedTitleColor:UIColor = UIColor.blue {
         didSet {
@@ -376,7 +382,7 @@ open class SkyFloatingLabelTextField: UITextField {
     }
     
     fileprivate func updateTextColor() {
-        if self.hasErrorMessage {
+        if self.useErrorColorOnTitle && self.hasErrorMessage {
             super.textColor = self.errorColor
         } else {
             super.textColor = self.cachedTextColor
