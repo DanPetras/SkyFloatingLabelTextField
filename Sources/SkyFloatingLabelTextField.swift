@@ -290,7 +290,7 @@ open class SkyFloatingLabelTextField: UITextField {
     fileprivate func createTitleLabel() {
         let titleLabel = UILabel()
         titleLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        titleLabel.font = UIFont.systemFont(ofSize: 13)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 10)
         titleLabel.alpha = 0.0
         titleLabel.textColor = self.titleColor
         self.addSubview(titleLabel)
